@@ -1,0 +1,11 @@
+
+---
+
+### How to Use:
+
+1. Create a new repository on GitHub called `vpn-tmux-status-monitor`.
+2. Clone the repository to your local machine.
+3. Copy the directory structure and files (`vpn_status.sh`, `vpn-status.service`, `vpn-status.timer`, and `README.md`) to your local repository.
+4. Push the changes to GitHub.
+
+Let me know if you need any further assistance!
