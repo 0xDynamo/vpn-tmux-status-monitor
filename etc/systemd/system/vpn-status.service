@@ -1,0 +1,12 @@
+[Unit]
+Description=VPN Status Monitor Service
+
+[Service]
+ExecStart=/usr/bin/zsh /home/dynamo/vpn_status.sh
+WorkingDirectory=/home/dynamo
+User=dynamo
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

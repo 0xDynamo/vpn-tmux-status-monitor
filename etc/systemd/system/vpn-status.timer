@@ -1,0 +1,10 @@
+[Unit]
+Description=Run VPN Status Monitor every 2 seconds
+
+[Timer]
+OnBootSec=5
+OnUnitActiveSec=2
+Unit=vpn-status.service  
+
+[Install]
+WantedBy=timers.target
