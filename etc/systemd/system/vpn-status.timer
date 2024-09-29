@@ -3,7 +3,7 @@ Description=Run VPN Status Monitor every 2 seconds
 
 [Timer]
 OnBootSec=5
-OnUnitActiveSec=2
+OnUnitActiveSec=5
 Unit=vpn-status.service  
 
 [Install]
