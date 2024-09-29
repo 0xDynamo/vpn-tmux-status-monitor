@@ -13,7 +13,7 @@ This project sets up a script that monitors VPN connection status, displays it i
 
 1. Create the Bash script that checks the VPN status. We'll monitor the `tun0` interface (adjust as needed).
 
-    Save the following script as `vpn_status.sh` under `/home/dynamo/`:
+    Save the following script as `vpn_status.sh` under `/home/$USER/`:
 
     ```bash
     #!/bin/bash
@@ -45,7 +45,7 @@ This project sets up a script that monitors VPN connection status, displays it i
 
 2. Make the script executable:
     ```bash
-    chmod +x /home/dynamo/vpn_status.sh
+    chmod +x /home/$USER/vpn_status.sh
     ```
 
 ### 2. Configure tmux to Display VPN Status
@@ -53,7 +53,7 @@ This project sets up a script that monitors VPN connection status, displays it i
 1. Edit your tmux configuration file (`~/.tmux.conf`) and add the following line to display the VPN status:
 
     ```bash
-    set -g status-right "VPN: #(cat /home/dynamo/vpn_status_output.txt) | #(whoami)@#(hostname -s)"
+    set -g status-right "VPN: #(cat /home/$USER/vpn_status_output.txt) | #(whoami)@#(hostname -s)"
     ```
 
 2. Reload tmux:
@@ -70,9 +70,9 @@ This project sets up a script that monitors VPN connection status, displays it i
     Description=VPN Status Monitor Service
 
     [Service]
-    ExecStart=/bin/bash /home/dynamo/vpn_status.sh
-    WorkingDirectory=/home/dynamo
-    User=dynamo
+    ExecStart=/bin/bash /home/%i/vpn_status.sh
+    WorkingDirectory=/home/%i
+    User=%i
     StandardOutput=journal
     StandardError=journal
 

@@ -2,7 +2,9 @@
 
 # Path to your .tmux.conf
 TMUX_CONF="$HOME/.tmux.conf"
-STATUS_FILE="$HOME/vpn_status_output.txt"
+# Path to store VPN status output
+STATUS_FILE="/home/$USER/vpn_status_output.txt"
+
 
 # Function to update tmux status-right for VPN connected, displaying the IP address
 update_tmux_for_vpn_connected() {

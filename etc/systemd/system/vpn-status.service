@@ -2,9 +2,9 @@
 Description=VPN Status Monitor Service
 
 [Service]
-ExecStart=/usr/bin/zsh /home/dynamo/vpn_status.sh
-WorkingDirectory=/home/dynamo
-User=dynamo
+ExecStart=/bin/bash /home/%i/vpn_status.sh
+WorkingDirectory=/home/%i
+User=%i
 StandardOutput=journal
 StandardError=journal
 
