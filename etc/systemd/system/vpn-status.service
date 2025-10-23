@@ -1,10 +1,14 @@
 [Unit]
-Description=VPN Status Monitor Service
+Description=VPN Status Monitor Service (%i)
+After=network-online.target
+Wants=network-online.target
 
 [Service]
-ExecStart=/bin/bash /home/%i/vpn_status.sh
-WorkingDirectory=/home/%i
+Type=oneshot
 User=%i
+Group=%i
+WorkingDirectory=/home/%i
+ExecStart=/bin/bash /home/%i/vpn_status.sh
 StandardOutput=journal
 StandardError=journal
 
